@@ -19,7 +19,7 @@
 
     </script>
 </head>
-<body ng-controller="ResumeController as resume" style="position: relative; height: 100%" data-spy="scroll" data-target=".bs-docs-sidebar">
+<body ng-controller="ResumeController as resume" style="position: relative; height: 100%" data-offset="40px" data-spy="scroll" data-target=".bs-docs-sidebar">
     <div class="row" id="sscontent">
         <div class="col-md-10">
             <div class="container-fluid info opener" id="introduction">
@@ -27,8 +27,8 @@
                 <h1>Interactive Curriculum Vitae</h1>
                 <h2>This site was built using <b>PHP</b>, <b>MySQL</b>, and <b>Angular</b>.  Most of my resume is Microsoft focused, so this acts as proof I can navigate the LAMP stack.</h2>
                 <br />
-                <h4>All the data for jobs, accomplishments and skills are sent in seperate arrays via a PHP generated <code>JSON resume object</code> that <a href="resume.php">you can inspect here</a>.  From that point, I organize the data, and display it on the page using <a href="https://angularjs.org/">Angular</a> and <a href="http://getbootstrap.com/">Bootstrap</a>.</h4>
-                <h4>Because I need to share this quickly, I'm going intentionally light on design, reserving time for funcionality</h4>
+                <h4>All the data for jobs, accomplishments and skills are stored in <a href="http://www.mysql.com/">MySQL</a> and sent in seperate arrays via a <a href="http://php.net/">PHP</a> generated <code>JSON resume object</code> that <a href="resume.php">you can inspect here</a>.  From that point, I organize the data, and display it on the page using <a href="https://angularjs.org/">Angular</a> and <a href="http://getbootstrap.com/">Bootstrap</a>.</h4>
+                <h4>Because I need to share this quickly, I'm going intentionally light on design, reserving time for functionality.</h4>
                 <h4>My ideal position is technical co-founder, or employee #1 for a recently funded startup.  I prefer a culture centered around teamwork, expirimentation, and people who are excited.</h4>
                 <h2>Use the navigation on the right, scroll down, or use any of the following links to jump to my <a href="#timeline">Work History</a>, <a href="#accomplishments">Major Accomplishments</a>, or <a href="#skills">Skills Toolbox.</a></h2>
 
@@ -52,10 +52,7 @@
                             </div>
                         </div>
                         <div class="" id="timeline">
-                            <div ng-repeat="job in resume.jobs" ng-attr-id="{{'job-' + job.id}}" class="alert-info">
-
-
-
+                            <div ng-repeat="job in resume.jobs" ng-attr-id="{{'job-' + job.id}}" class="row">
                                 <h4>
                                     <span ng-if="job.startup != 1" class="timeline-badge info" data-toggle="tooltip" data-placement="left" title="Eww... Corperate America"><i class="glyphicon glyphicon-briefcase"></i></span>
                                     <span ng-if="job.startup == 1" class="timeline-badge success" data-toggle="tooltip" data-placement="left" title="Go Startups!"><i class="glyphicon glyphicon-fire"></i></span>
@@ -68,13 +65,13 @@
                                     <div class="col-md-8">
                                         <ol style="margin-top: 15px">
                                             <!--float: left;-->
-                                            <li class="" ng-repeat="accomplishment in resume.accomplishments | filter: { idjob : job.id } : true"><b>{{accomplishment.name}}</b>
+                                            <li class="" ng-repeat="accomplishment in resume.accomplishments | filter: { idjob : job.id } : true">{{accomplishment.name}}
                                             </li>
                                         </ol>
                                     </div>
                                     <div class="col-md-4">
-                                        <span ng-repeat="jobskill in resume.jobskills | filter: { idjob : job.id }">
-                                            <span ng-repeat="skill in resume.skills | filter: { id : jobskill.idskill } : true"><span class="bg-danger" style="margin-top: 6px; margin-left: 4px; padding: 3px">
+                                        <span ng-repeat="jobskill in resume.jobskills | filter: { idjob : job.id }" style="padding-top:5px">
+                                            <span ng-repeat="skill in resume.skills | filter: { id : jobskill.idskill } : true"><span class="bg-danger" style="margin-top: 6px; margin-left: 4px; padding: 1px 1px 1px 1px">
                                                 <!--float: left;-->
                                                 {{skill.name}}</span></span>
                                         </span>
