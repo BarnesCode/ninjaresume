@@ -1,0 +1,44 @@
+﻿.accomplishment {
+    height: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.accomplishments-container {
+    padding-top: 20px;
+    background-color: #8EC7BA;
+    padding-left: -15px;
+}
+
+.job {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.job-container {
+    padding-top: 20px;
+    padding-left: -15px;
+    background-color: #AAD7AC;
+}
+
+.nopadding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.skill {
+    background-color: #DB632E;
+    color: white;
+    border: 1px solid black;
+    border-radius: 1px;
+    padding: 1px 2px 1px 2px;
+    margin-bottom: 10px;
+}
+
+.skillcloud {
+    background-color: #AB9D7F;
+}
+
+.opener {
+    background-color: #F8E9CB;
+}

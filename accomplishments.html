@@ -1,0 +1,12 @@
+﻿<div class="accomplishment" ng-attr-id="{{'acc-' + accomplishment.id}}" ng-repeat="accomplishment in resume.accomplishments | limitTo : 10">
+    <span class="animate-switch-container"
+        ng-switch on="accomplishment.type">
+        <span class="animate-switch" ng-switch-when="product" data-toggle="tooltip" data-placement="right" title="Put it in a box.  This accomplishment is product related."><i class="glyphicon glyphicon-gift glyphicon-th-large"></i></span>
+        <span class="animate-switch" ng-switch-when="technical" data-toggle="tooltip" data-placement="right" title="000101001111 This accomplishment is tech related."><i class="glyphicon glyphicon-wrench"></i></span>
+        <span class="animate-switch" ng-switch-when="management" data-toggle="tooltip" data-placement="right" title="Umm, I'm going to need you to come in on Saturday... This accomplishment is management related."><i class="glyphicon glyphicon-user"></i></span>
+        <span class="animate-switch" ng-switch-when="sales" data-toggle="tooltip" data-placement="right" title="Cha Ching!  This accomplishment is sales or marketing related."><i class="glyphicon glyphicon-usd"></i></span>
+        <span class="animate-switch" ng-switch-default>{{accomplishment.type}}</span>
+    </span>
+    <span class="info-text"><big>&nbsp;{{accomplishment.name}}</big></span>
+    <p style="padding-left: 25px" class="text-muted">{{accomplishment.description}}</p>
+</div>

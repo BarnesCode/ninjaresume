@@ -1,0 +1,31 @@
+﻿<ul id="sidebar" class="nav nav-stacked fixed">
+    <li>
+        <a href="javascript:void(0);" ng-click="navigate('introduction')">Introduction</a>
+    </li>
+    <li>
+        <a href="javascript:void(0);" ng-click="navigate('accomplishments')">Career Highlights</a>
+        <ul class="nav nav-stacked">
+            <li ng-repeat="acc in resume.accomplishments | limitTo : 10">
+                <a href="#acc-{{acc.id}}" ng-click="navigate('acc-' + acc.id)">{{acc.name}}</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" ng-click="navigate('timeline')">Work History</a>
+        <ul class="nav nav-stacked">
+            <li ng-repeat="job in resume.jobs">
+                <a ng-href="#job-{{job.id}}" ng-click="navigate('job-' + job.id)">{{job.company}}</a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="javascript:void(0);" ng-click="navigate('skills')">Skills Toolbox</a>
+        <!--<ul class="nav nav-stacked">
+                        <li ng-repeat="skill in resume.skills">
+                            <a ng-href="#skill-{{skill.id}}">{{skill.name}}</a>
+                        </li>
+                    </ul>-->
+    </li>
+
+</ul>

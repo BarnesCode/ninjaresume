@@ -1,161 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="resume">
 <head>
-    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="sidenav.css" />
+    <link rel="stylesheet" type="text/css" href="custom.css" />
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="tagcloud.js"></script>
 
-    <style>
-        .accomplishment {
-            height: 100px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        .accomplishments-container {
-            padding-top: 20px;
-            background-color: #8EC7BA;
-            padding-left: -15px;
-        }
-
-        .job {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        .job-container {
-            padding-top: 20px;
-            padding-left: -15px;
-            background-color: #AAD7AC;
-        }
-
-        .nopadding {
-            padding-left: 0px !important;
-            padding-right: 0px !important;
-        }
-
-        .skill {
-            background-color: #DB632E;
-            color: white;
-            border: 1px solid black;
-            border-radius: 1px;
-            padding: 1px 2px 1px 2px;
-            margin-bottom: 10px;
-        }
-
-        .skillcloud {
-            background-color: #AB9D7F;
-        }
-
-        .opener {
-            background-color: #F8E9CB;
-        }
-    </style>
     <script>
         $(function () {
-            //$('#myTab a').click(function (e) {
-            //    //alert($(this).tab());
-            //    e.preventDefault();
-            //    $(this).tab('show');
-            //})
-            $('.opener').height($(window).height());
             $.fn.tagcloud.defaults = {
                 size: { start: 10, end: 48, unit: 'pt' },
                 color: { start: '000000', end: '#FFFFFF' }
             };
-
         });
-
     </script>
 </head>
-<body ng-controller="ResumeController as resume" style="position: relative; height: 100%" data-offset="-40px" data-spy="scroll" data-target=".bs-docs-sidebar">
+<body ng-controller="ResumeController as resume" style="position: relative; height: 100%" data-offset="40px" data-spy="scroll" data-target=".bs-docs-sidebar">
     <div class="" id="sscontent">
+        <!-- LEFT SIDE-->
         <div class="col-md-10 nopadding">
-            <div class="container-fluid opener" id="introduction">
 
-                <h1>Interactive Curriculum Vitae - IN PROGRESS :)</h1>
-                <h2>This site was built using <b>PHP</b>, <b>MySQL</b>, and <b>Angular</b>.  Most of my resume is Microsoft focused, so this acts as proof I can navigate the LAMP stack.</h2>
-                <br />
-                <h4>All the data for jobs, accomplishments and skills are stored in <a href="http://www.mysql.com/">MySQL</a> and sent in seperate arrays via a <a href="http://php.net/">PHP</a> generated <code>JSON resume object</code> that <a href="resume.php">you can inspect here</a>.  From that point, I organize the data, and display it on the page using <a href="https://angularjs.org/">Angular</a> and <a href="http://getbootstrap.com/">Bootstrap</a>.</h4>
-                <h4>Because I need to share this quickly, I'm going intentionally light on design, reserving time for functionality.  Colors thanks to <a href="http://www.colourlovers.com/lover/MissCarlyRenee/loveNote">MissCarlyRenee</a></h4>
-                <h4>My ideal position is technical co-founder, or employee #1 for a recently funded startup in the Orange County or San Diego area.  I prefer a culture centered around teamwork, experimentation, and people who are excited.</h4>
-                <h4>If you're hardcore, you might want to see <a href="https://github.com/BarnesCode/ninjaresume">this GitHub link</a>.</h4>
-                <h2>Use the navigation on the right, scroll down, or use any of the following links to jump to my <a href="#timeline">Work History</a>, <a href="#accomplishments">Major Accomplishments</a>, or <a href="#skills">Skills Toolbox.</a></h2>
-
-                <h1 class="footer"><span class="glyphicon glyphicon-circle-arrow-down btn btn-lg"></span><span class="glyphicon glyphicon-circle-arrow-down btn btn-lg"></span>See what I've been upto the past 15 years<span class="glyphicon glyphicon-circle-arrow-down btn-lg"></span><span class="glyphicon glyphicon-circle-arrow-down btn-lg"></span></h1>
-            </div>
-            <div class="accomplishments-container" id="accomplishments">
-                <div class="accomplishment" ng-attr-id="{{'acc-' + accomplishment.id}}" ng-repeat="accomplishment in resume.accomplishments | limitTo : 10">
-                    <span class="animate-switch-container"
-                        ng-switch on="accomplishment.type">
-                        <span class="animate-switch" ng-switch-when="product" data-toggle="tooltip" data-placement="right" title="Put it in a box.  This accomplishment is product related."><i class="glyphicon glyphicon-gift glyphicon-th-large"></i></span>
-                        <span class="animate-switch" ng-switch-when="technical" data-toggle="tooltip" data-placement="right" title="000101001111 This accomplishment is tech related."><i class="glyphicon glyphicon-wrench"></i></span>
-                        <span class="animate-switch" ng-switch-when="management" data-toggle="tooltip" data-placement="right" title="Umm, I'm going to need you to come in on Saturday... This accomplishment is management related."><i class="glyphicon glyphicon-user"></i></span>
-                        <span class="animate-switch" ng-switch-when="sales" data-toggle="tooltip" data-placement="right" title="Cha Ching!  This accomplishment is sales or marketing related."><i class="glyphicon glyphicon-usd"></i></span>
-                        <span class="animate-switch" ng-switch-default>{{accomplishment.type}}</span>
-                    </span>
-                    <span class="info-text"><big>&nbsp;{{accomplishment.name}}</big></span>
-                    <p style="padding-left: 25px" class="text-muted">{{accomplishment.description}}</p>
-                </div>
-            </div>
-
-
+            <div class="container-fluid opener" id="introduction" ng-include="'introduction.html'"></div>
+            <div class="accomplishments-container" id="accomplishments" ng-include="'accomplishments.html'"></div>
             <div ng-include="'jobs.html'" class="job-container" id="timeline"></div>
-
-
-
-
-
-
-            <div class="skillcloud" id="skills">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10" style="padding: 10px; color: white; font-weight: bold; font-size: large">The following represents all of the different tech skills I've used accross the years.  The word cloud is weighted by number of different jobs a skill is assosiated with.</div>
-                    <div class="col-md-1"></div>
-                </div>
-                <a href="#" ng-repeat="skill in resume.skills" rel="{{ (resume.jobskills | filter: { idskill : skill.id} : true).length }}">{{skill.name}}
-                </a>
-            </div>
+            <div class="skillcloud" id="skills" ng-include="'skillscloud.html'"></div>
         </div>
 
-
-        <nav class="col-xs-2 bs-docs-sidebar">
-            <ul id="sidebar" class="nav nav-stacked fixed">
-                <li>
-                    <a href="#introduction">Introduction</a>
-                </li>
-                <li>
-                    <a href="#accomplishments">Career Highlights</a>
-                    <ul class="nav nav-stacked">
-                        <li ng-repeat="acc in resume.accomplishments | limitTo : 10">
-                            <a ng-href="#acc-{{acc.id}}">{{acc.name}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#timeline">Work History</a>
-                    <ul class="nav nav-stacked">
-                        <li ng-repeat="job in resume.jobs">
-                            <a ng-href="#job-{{job.id}}">{{job.company}}</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#skills">Skills Toolbox</a>
-                    <!--<ul class="nav nav-stacked">
-                        <li ng-repeat="skill in resume.skills">
-                            <a ng-href="#skill-{{skill.id}}">{{skill.name}}</a>
-                        </li>
-                    </ul>-->
-                </li>
-
-            </ul>
-        </nav>
+        <!--SIDEBAR-->
+        <nav class="col-xs-2 bs-docs-sidebar" ng-include="'sidebar.html'"></nav>
     </div>
 </body>
 </html>
