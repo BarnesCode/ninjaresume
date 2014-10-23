@@ -30,7 +30,6 @@
         .job-container {
             padding-top: 20px;
             padding-left: -15px;
-
             background-color: #AAD7AC;
         }
 
@@ -49,11 +48,11 @@
         }
 
         .skillcloud {
-                        background-color: #AB9D7F;
+            background-color: #AB9D7F;
         }
 
         .opener {
-                        background-color: #F8E9CB;
+            background-color: #F8E9CB;
         }
     </style>
     <script>
@@ -103,39 +102,21 @@
                     <p style="padding-left: 25px" class="text-muted">{{accomplishment.description}}</p>
                 </div>
             </div>
-            <div class="job-container" id="timeline">
-                <div ng-repeat="job in resume.jobs" ng-attr-id="{{'job-' + job.id}}" class="job" style="">
-                    <span ng-if="job.startup != 1" class="timeline-badge info" data-toggle="tooltip" data-placement="left" title="Eww... Corperate America"><i class="glyphicon glyphicon-briefcase"></i></span>
-                    <span ng-if="job.startup == 1" class="timeline-badge success" data-toggle="tooltip" data-placement="left" title="Go Startups!"><i class="glyphicon glyphicon-fire"></i></span>
-                    {{job.company}} - <small>{{job.description}}</small><small class="text-info"> - {{job.title}}</small>
-                    <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>&nbsp;{{job.startyear}} - {{job.endyear}}</small>
 
 
-                    <div class="row">
-                        <div class="col-md-8">
-                            <ol style="margin-top: 15px">
-                                <!--float: left;-->
-                                <li class="" ng-repeat="accomplishment in resume.accomplishments | filter: { idjob : job.id } : true">{{accomplishment.name}}
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="col-md-4">
-                            <div style="margin-top: 15px">
-                                <span ng-repeat="jobskill in resume.jobskills | filter: { idjob : job.id }">
-                                    <span ng-repeat="skill in resume.skills | filter: { id : jobskill.idskill } : true"><span class="skill">
-                                        <!--float: left;-->
-                                        {{skill.name}}</span></span>
-                                </span>
-                            </div>
-                        </div>
+            <div ng-include="'jobs.html'" class="job-container" id="timeline"></div>
 
-                    </div>
 
-                </div>
-            </div>
+
+
+
 
             <div class="skillcloud" id="skills">
-                <p>The following represents all of the different tech skills I've used accross the years.  The word cloud is weighted by number of different jobs a skill is assosiated with.</p>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10" style="padding: 10px; color: white; font-weight: bold; font-size: large">The following represents all of the different tech skills I've used accross the years.  The word cloud is weighted by number of different jobs a skill is assosiated with.</div>
+                    <div class="col-md-1"></div>
+                </div>
                 <a href="#" ng-repeat="skill in resume.skills" rel="{{ (resume.jobskills | filter: { idskill : skill.id} : true).length }}">{{skill.name}}
                 </a>
             </div>
@@ -178,3 +159,15 @@
     </div>
 </body>
 </html>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-55927252-1', 'auto');
+    ga('send', 'pageview');
+
+</script>

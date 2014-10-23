@@ -1,0 +1,41 @@
+﻿<div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="padding: 10px; color: white; font-weight: bold; font-size: large">This is my job history, I'm currently working on a way to show personal reccomendations, and details about how I used each skill at each position.</div>
+        <div class="col-md-1"></div>
+    </div>
+    <br />
+    <div ng-repeat="job in resume.jobs" ng-attr-id="{{'job-' + job.id}}" class="job" style="">
+        <span ng-if="job.startup != 1" class="timeline-badge info" data-toggle="tooltip" data-placement="left" title="Eww... Corperate America"><i class="glyphicon glyphicon-briefcase"></i></span>
+        <span ng-if="job.startup == 1" class="timeline-badge success" data-toggle="tooltip" data-placement="left" title="Go Startups!"><i class="glyphicon glyphicon-fire"></i></span>
+        {{job.company}} - <small>{{job.description}}</small><small class="text-info"> - {{job.title}}</small>
+        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>&nbsp;{{job.startyear}} - {{job.endyear}}</small>
+
+
+        <div class="row">
+            <div class="col-md-7">
+                <!--style="border:solid 1px;">-->
+                <ol style="margin-top: 15px">
+                    <!--float: left;-->
+                    <li class="" ng-repeat="accomplishment in resume.accomplishments | filter: { idjob : job.id } : true">{{accomplishment.name}}
+                    </li>
+                </ol>
+            </div>
+            <div class="col-md-1">
+                {{ (resume.reccomendations | filter: { idjob : job.id} : true).length }} 
+            </div>
+            <div class="col-md-4" style="border: 1px;">
+                <div style="margin-top: 15px">
+                    <span ng-repeat="jobskill in resume.jobskills | filter: { idjob : job.id }">
+                        <span ng-repeat="skill in resume.skills | filter: { id : jobskill.idskill } : true"><span class="skill">
+                            <!--float: left;-->
+                            {{skill.name}}</span></span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

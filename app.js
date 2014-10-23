@@ -11,6 +11,7 @@
                       cont.skills = data.skills;
                       cont.accomplishments = data.accomplishments;
                       cont.jobskills = data.jobskills;
+                      cont.reccomendations = data.reccomendations;
                       setTimeout(function () { $("#skills a").tagcloud() }, 10);
                       //setTimeout(function () { $('body').scrollspy('refresh'); }, 10);
                   })

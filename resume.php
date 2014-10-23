@@ -6,7 +6,7 @@ class Resume
   public $skills = array();
   public $accomplishments = array();
   public $jobskills = array();
-  public $bob = "bob";
+  public $reccomendations = array();
 }
 
 function GetJobs($con)
@@ -72,6 +72,27 @@ function GetJobSkills($con)
   return $jobSkills_arr;
 }
 
+function GetReccomendations($con)
+{
+  $reccomendations_arr = array();
+  $row_array = array();
+  $sql = 'select * from barnesni_resume.reccomendations';
+  $fetch = mysql_query($sql, $con);
+  if(!$fetch){
+    // means your query failed
+    // error checking...
+     echo 'Invalid query: ' . mysql_error($con) . '<br>';
+  }
+  while ($row = mysql_fetch_array($fetch)) {
+      $row_array['id'] = $row['idreccomendations'];
+      $row_array['idjob'] = $row['idjob'];
+      $row_array['text'] = $row['text'];
+
+      array_push($reccomendations_arr,$row_array);
+  }
+  return $reccomendations_arr;
+}
+
 function GetAccomplishments($con)
 {
   $accomplishments_arr = array();
@@ -107,6 +128,7 @@ $resume->jobs = GetJobs($con);
 $resume->skills = GetSkills($con);
 $resume->accomplishments = GetAccomplishments($con);
 $resume->jobskills = GetJobSkills($con);
+$resume->reccomendations = GetReccomendations($con);
 
 echo json_encode($resume);
 ?>
