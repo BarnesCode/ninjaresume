@@ -87,6 +87,7 @@ function GetReccomendations($con)
       $row_array['id'] = $row['idreccomendations'];
       $row_array['idjob'] = $row['idjob'];
       $row_array['text'] = $row['text'];
+      $row_array['fromname'] = $row['fromname'];
 
       array_push($reccomendations_arr,$row_array);
   }

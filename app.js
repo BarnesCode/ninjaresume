@@ -22,6 +22,9 @@
                               e.preventDefault();
                           })
                       }, 10);
+                      setTimeout(function () {
+                          $('.itemtext').each(function () { $(this).autoTextSize(5, 3000) });
+                      }, 20);
 
                           //setTimeout(function () { $('body').scrollspy('refresh') }, 150);
                       })
