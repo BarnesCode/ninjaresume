@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="resume">
 <head>
+    <title >Justin Barnes Resume</title>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="sidenav.css" />
     <link rel="stylesheet" type="text/css" href="custom.css" />
@@ -24,13 +25,13 @@
     <div class="" id="sscontent">
         <!-- LEFT SIDE-->
         <div class="col-md-10 nopadding">
-
-            <div class="container-fluid opener" id="introduction" ng-include="'introduction.html'"></div>
+            <div class="aboutme" id="aboutme" ng-include="'aboutme.html'"></div>
+            <div class="opener" id="aboutsite" ng-include="'aboutsite.html'"></div>
             <div class="accomplishments-container" id="accomplishments" ng-include="'accomplishments.html'"></div>
             <div class="carousel" id="reccomendations" ng-include="'carousel.html'"></div>
             <div ng-include="'jobs.html'" class="job-container" id="timeline"></div>
             <div class="skillcloud" id="skills" ng-include="'skillscloud.html'"></div>
-            
+            <div class="contact" id="contact" ng-include="'contact.html'"></div>
         </div>
         <!--SIDEBAR-->
         <nav class="col-xs-2 bs-docs-sidebar" ng-include="'sidebar.html'"></nav>

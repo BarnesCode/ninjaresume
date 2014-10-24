@@ -5,20 +5,37 @@
 }
 
 .accomplishments-container {
-    padding-top: 20px;
-    background-color: #8EC7BA;
-    padding-left: -15px;
+    background-color: #F9F2E7;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.heading {
+    font-size: x-large;
+    padding-bottom: 100px;
 }
 
 .job {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 40px;
 }
 
 .job-container {
-    padding-top: 20px;
-    padding-left: -15px;
-    background-color: #AAD7AC;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #AEE239;
+}
+.aboutme {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #00A8C6;
 }
 
 .nopadding {
@@ -27,18 +44,54 @@
 }
 
 .skill {
-    background-color: #DB632E;
+    background-color: #8FBE00;
     color: white;
-    border: 1px solid black;
+    border-radius:3px;
+    border: 1px solid white;
     border-radius: 1px;
-    padding: 1px 2px 1px 2px;
+    padding: 2px 2px;
     margin-bottom: 10px;
 }
 
+.btn-xl {
+    padding: 18px 28px;
+    font-size: x-large;
+    //change this to your desired size line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.bigtext {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.medtext {
+    font-size: larger;
+}
+
 .skillcloud {
-    background-color: #AB9D7F;
+    background-color: #8FBE00;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .opener {
-    background-color: #F8E9CB;
+    background-color: #40C0CB;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#aboutsite a:link {
+    color: white;
+    text-decoration:underline;
+
+}
+#aboutsite a:visited{
+  color:white;
 }

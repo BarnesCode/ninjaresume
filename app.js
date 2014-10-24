@@ -16,7 +16,7 @@
                       cont.accomplishments = data.accomplishments;
                       cont.jobskills = data.jobskills;
                       cont.reccomendations = data.reccomendations;
-                      setTimeout(function () { $("#skills a").tagcloud() }, 10);
+                      setTimeout(function () { $("#skills a").tagcloud() }, 25);
                       setTimeout(function () {
                           $('#sidebar a').click(function (e) {
                               e.preventDefault();

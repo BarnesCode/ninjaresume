@@ -1,6 +1,6 @@
 ﻿<div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10" style="padding: 10px; color: white; font-weight: bold; font-size: large">The following represents all of the different tech skills I've used accross the years.  The word cloud is weighted by number of different jobs a skill is assosiated with.</div>
+    <div class="col-md-10 heading">The following represents all of the different tech skills I've used accross the years.  The word cloud is weighted by number of different jobs a skill is assosiated with.</div>
     <div class="col-md-1"></div>
 </div>
 <a href="#" ng-repeat="skill in resume.skills" rel="{{ (resume.jobskills | filter: { idskill : skill.id} : true).length }}">{{skill.name}}
