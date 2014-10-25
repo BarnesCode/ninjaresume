@@ -18,7 +18,7 @@
                       cont.reccomendations = data.reccomendations;
                       setTimeout(function () { $("#skills a").tagcloud() }, 25);
                       setTimeout(function () {
-                          $('#sidebar a').click(function (e) {
+                          $('#sidebar a').not(".linkedlink").click(function (e) {
                               e.preventDefault();
                           })
                       }, 10);

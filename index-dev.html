@@ -22,10 +22,11 @@
     </script>
 </head>
 <body ng-controller="ResumeController as resume" style="position: relative; height: 100%" data-offset="40px" data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div class="navbar navbar-default navbar-fixed-top hidden-lg" role="navigation" ng-include="'topbar.html'"></div>
     <div class="" id="sscontent">
         <!-- LEFT SIDE-->
         <div class="col-md-10 nopadding">
-            <div class="aboutme" id="aboutjustin" ng-include="'aboutme.html'"></div>
+            <div class="aboutme" id="aboutme" ng-include="'aboutme.html'"></div>
             <div class="opener" id="aboutsite" ng-include="'aboutsite.html'"></div>
             <div class="accomplishments-container" id="accomplishments" ng-include="'accomplishments.html'"></div>
             <div class="carousel" id="reccomendations" ng-include="'carousel.html'"></div>
