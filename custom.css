@@ -63,7 +63,7 @@ body{
     color:white;
     padding:20px;
     background-color: #00A8C6;
-    box-shadow:2px 2px 200px 20px #094e77 inset;
+    box-shadow:2px 2px 100px 20px #094e77 inset;
     border-top:20px solid black;
 }
 .highlight{
@@ -106,7 +106,7 @@ body{
 
 .skillcloud {
     color:white;
-    background-color: #6A5A5B;
+    background-color: #AEE239;
     padding-top: 100px;
     padding-bottom: 150px;
     padding-left: 40px;

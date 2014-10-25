@@ -1,0 +1,36 @@
+﻿<ul id="topbar" class="nav navbar-nav">
+
+    <li>
+        <a href="#aboutme" ng-click="navigate('aboutme')">Me</a>
+    </li>
+    <li>
+        <a href="#aboutsite" ng-click="navigate('aboutsite')">Site</a>
+    </li>
+    <li>
+        <a href="#accomplishments" ng-click="navigate('accomplishments')">Highlights</a>
+    </li>
+    <li>
+        <a href="#reccomendations" ng-click="navigate('reccomendations')">Reccomendations</a>
+    </li>
+    <li>
+        <a href="#timeline" ng-click="navigate('timeline')">History</a>
+    </li>
+
+    <li>
+        <a href="#skills" ng-click="navigate('skills')">Skills</a>
+    </li>
+    <li>
+        <a href="#contact" ng-click="navigate('contact')">Contact</a>
+    </li>
+    <li>
+        <a href="http://www.linkedin.com/in/justinbarnes">
+
+            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png" width="160" height="25" border="0" alt="View Justin Barnes's profile on LinkedIn">
+        </a>
+    </li>
+</ul>
+<script>
+    $('#topbar a').click(function (e) {
+        e.preventDefault();
+    })
+</script>
